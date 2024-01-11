@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>To-Do List</title>
+    <link rel="icon" type="image" href="todoimg.png">
+   <style>
+    @media screen and (max-width:600px) {
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:Arial, Helvetica, sans-serif ;
+    }
+    span{
+        display: flex;
+        float: right;
+        justify-content: space-between;
+    }
+
+    h1 {
+        height: 60px;
+        background-image: linear-gradient(to bottom right ,rgb(255, 15, 255),pink);
+        font-family: cursive;
+        text-align: center;
+        padding: 10px;
+        color: white;
+    }
+
+    main {
+        margin: 50px auto;
+        padding: 30px;
+        height: 500px;
+        border: 1px solid red;
+        width: 70% ;
+        display: flex;
+        flex-direction: column;
+        background-image: linear-gradient(to bottom right ,rgb(255, 15, 255),pink);
+        
+       
+    }
+
+    li {
+        padding: 10px;
+        width: 50% auto;
+        list-style: none;
+       background-color: rgb(255, 255, 255);
+       
+        margin-top: 10px;
+        border: 0;
+        border-radius: 9px;
+        color: rgb(0, 0, 0);
+    }
+
+    #search-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px; /* Add margin to separate the search box from the list items */
+    }
+    input{
+        padding-left: 10px;
+        font-family: cursive;
+    }
+
+    #lists {
+        height: 40px;
+        width: 70%;
+        border: 1px solid;
+        border-radius: 9px;
+    }
+
+    #addbtn {
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-left: 10px; /* Add some spacing between input and button */
+        font-family: cursive;
+    }
+    #addbtn:hover{
+        transition: 0.5s;
+        background-color: violet;
+       
+    }
+        
+    }
+    @media screen and (min-width:601px) {
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family:Arial, Helvetica, sans-serif ;
+    }
+    span{
+        display: flex;
+        float: right;
+        justify-content: space-between;
+    }
+
+    h1 {
+        height: 60px;
+        background-color: pink;
+        background-image: linear-gradient(to bottom right ,rgb(255, 15, 255),pink);
+    font-family: cursive;
+        text-align: center;
+        padding: 10px;
+        color: white;
+    }
+
+    main {
+        margin: 50px auto;
+        padding: 30px;
+        height: 500px;
+        border: 1px solid red;
+        background-image: linear-gradient(to bottom right ,rgb(255, 15, 255),pink);
+        
+        width: 30% ;
+        display: flex;
+        flex-direction: column;
+       
+    }
+
+    li {
+        padding: 10px;
+        width: 50% auto;
+        list-style: none;
+        background-color: rgb(255, 255, 255);
+        margin-top: 10px;
+        border: 0;
+        border-radius: 9px;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        font-family: cursive;
+    }
+
+    #search-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px; /* Add margin to separate the search box from the list items */
+    
+    }
+    input{
+        padding-left: 10px;
+        font-family: cursive;
+    }
+
+    #lists {
+        height: 40px;
+        width: 70%;
+        border: 1px solid;
+        border-radius: 9px;
+        font-size: 20px;
+    }
+
+    #addbtn {
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-left: 10px; /* Add some spacing between input and button */
+        font-family: cursive;
+    }
+    #addbtn:hover{
+        transition: 0.5s;
+        background-color: violet;
+    }
+        
+    }
+    
+   </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <main>
+        <div id="search-container">
+            <input type="text" id="lists" placeholder="What do you have done?">
+            <span style="cursor: pointer;" id="addbtn" onclick="addevent()">Add</span>
+        </div>
+        <ul id="ull">
+             </ul>
+    </main>
+    <script>
+        function addevent(){
+        var a = document.getElementById("lists").value + '<span style = "cursor:pointer" class="closebtn" onclick="closed(event)">x</span>';
+        var b = document.getElementById("addbtn")
+        var c = document.createElement("li") 
+        var d = document.getElementById("ull")
+        c.innerHTML = a
+        d.append(c)
+       }
+   function closed(event){
+
+        event.target.parentElement.remove()
+
+   }
+
+
+    </script>
+</body>
+</html>
